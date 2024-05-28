@@ -1,5 +1,26 @@
-    .card-container{
+.container {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten automáticamente */
+    justify-content: space-around; /* Distribuye las tarjetas de manera uniforme */
+  }
+  
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+      }
+      
+      .col-2 {
+        flex: 0 0 20%; // 20% of the row width for 5 columns per row
+        box-sizing: border-box;
+        padding: 10px;
+      }
+      
+      .card-container {
+        width: 100%;
         margin-top: 20px;
-        position: absolute;
+        position: relative;
         
-    }
+      }
+      

@@ -1,19 +1,17 @@
 import { Component } from '@angular/core';
-import { RouterEvent, RouterLink, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { FormsModule } from '@angular/forms';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { CommonModule } from '@angular/common';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule,
-    RouterOutlet, 
-    FormsModule,
+    RouterOutlet,
     NavBarComponent,
-    HomeComponent
+    HomeComponent,
+    NgFor
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

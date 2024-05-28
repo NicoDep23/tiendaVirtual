@@ -1,8 +1,23 @@
 <div class="container">
-    <app-card class="card-container"
-        title="Modulo A125F" 
-        imageUrl="/assets/images/productos/a125f.jpg" 
-        description="Modulo Compatible con Samsung A12"
-        price="$18500,00">
-    </app-card>
+  <div *ngIf="productos$ | async as productos; else noProductos">
+    <div *ngFor="let row of chunkArray(productos, 5)" class="row">
+      <div *ngFor="let producto of row" class="col-2">
+        <app-card 
+          [title]="producto.title"
+          [imageUrl]="producto.image"
+          [description]="producto.description"
+          [price]="'Price $' + producto.price">
+        </app-card>
+      </div>
+    </div>
+  </div>
+  <ng-template #noProductos>
+    <p>No hay productos disponibles.</p>
+  </ng-template>
 </div>
+<!--                                                  
+<pre>
+  {{ productos$ | async | json }}
+</pre> -->
+
+ 
