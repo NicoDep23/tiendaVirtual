@@ -1,3 +1,4 @@
+/* Estilos base */
 .navbar {
     position: fixed;
     top: 0;
@@ -7,15 +8,23 @@
     margin: auto;
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Añadir espacio entre elementos */
     background-color: #020F1F;
     color: #00FFFF;
     font: normal 24px "Helvetica Neue", Arial, Tahoma, Verdana;
+    padding: 0 20px; /* Añadir padding para espacios */
+}
+
+.navbar ul {
+    display: flex;
+    margin: 0;
+    padding: 50px;
 }
 
 .navbar ul li {
     list-style: none;
     display: inline-block;
-    margin: 20px;
+    margin: 0 10px;
     position: relative;
 }
 
@@ -41,14 +50,66 @@
 }
 
 .logo {
-    margin-right: auto;
-    font-size: 2.5rem;
     display: flex;
     align-items: center;
+    font-size: 2.5rem;
 }
 
 .logo img {
     width: 100px;
     height: 100px;
+    margin-right: 10px;
 }
 
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        align-items: flex-start;
+        padding: 10px 20px; /* Añadir padding para espacios */
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0; /* Eliminar padding para evitar desplazamientos */
+        margin-top: 10px; /* Añadir margen superior para espacio entre logo y enlaces */
+    }
+
+    .navbar ul li {
+        margin: 5px 0;
+    }
+
+    .navbar ul li a {
+        font-size: 1rem;
+    }
+
+    .logo {
+        width: 100%;
+        justify-content: center; /* Centrar el logo en dispositivos pequeños */
+    }
+
+    .logo img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .logo .company-name {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar ul li a {
+        font-size: 0.9rem;
+    }
+
+    .logo img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .logo .company-name {
+        font-size: 1.5rem;
+    }
+}

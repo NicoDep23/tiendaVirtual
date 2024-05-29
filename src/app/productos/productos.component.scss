@@ -1,26 +1,50 @@
 .container {
-    margin-top: 100px;
-    display: flex;
-    flex-wrap: wrap; /* Permite que las tarjetas se ajusten automáticamente */
-    justify-content: space-around; /* Distribuye las tarjetas de manera uniforme */
-  }
-  
-      .row {
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  /* Permite que las tarjetas se ajusten automáticamente */
+  justify-content: space-around;
+  /* Distribuye las tarjetas de manera uniforme */
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.col-2 {
+  flex: 0 0 20%; // 20% of the row width for 5 columns per row
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.card-container {
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+
+}
+
+.no-productos {
         display: flex;
-        flex-wrap: wrap;
-        margin-bottom: 20px;
-      }
-      
-      .col-2 {
-        flex: 0 0 20%; // 20% of the row width for 5 columns per row
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 100px); /* Ajusta para que ocupe el espacio restante debajo del navbar */
+        text-align: center;
+        color: #ffffff;
+        font-family: 'Helvetica Neue', Arial, Tahoma, Verdana;
+        font-size: 24px;
+        padding: 20px;
         box-sizing: border-box;
-        padding: 10px;
-      }
-      
-      .card-container {
-        width: 100%;
-        margin-top: 20px;
-        position: relative;
-        
-      }
-      
+    } 
+
+.no-productos p {
+  font-size: 1.5rem;
+  color: #ffffff;
+  background-color: #eaabab;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}

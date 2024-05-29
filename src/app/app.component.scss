@@ -1,0 +1,17 @@
+.footer {
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    background: rgb(37, 65, 101);
+    background: linear-gradient(90deg, rgba(37, 65, 101, 1) 25%, rgba(2, 15, 31, 1) 50%, rgba(37, 65, 101, 1) 75%);
+    color: #dae6e6;
+    font-family: 'Helvetica Neue', Arial, Tahoma, Verdana;
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1rem;
+}
