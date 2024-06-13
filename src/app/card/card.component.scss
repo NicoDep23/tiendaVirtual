@@ -1,21 +1,26 @@
 .card {
   width: 250px;
-  //height: 600px; /* Establece una altura fija para todas las tarjetas */
+  height: 500px;
   border: 1px solid #ccc;
   border-radius: 5px;
   overflow: hidden;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   background-color: azure;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  display: flex; /* Utiliza flexbox para alinear contenido verticalmente */
-  flex-direction: column; /* Alinea el contenido en columna */
+  display: flex;
+  flex-direction: column; 
 }
 
 .card img {
   padding: 5px;
-  width: 90%;
-  object-fit: cover;
-  flex: 1; /* Hace que la imagen ocupe el espacio restante en la tarjeta */
+  width: 80%;
+  object-fit:contain;
+  flex: 1;
+ 
+}
+
+.card img:hover {
+  transform: scale(1.05);
 }
 
 .card-body {
@@ -24,11 +29,12 @@
 
 .card-title {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .card-description {
   margin: 10px 0;
+  font-size: 0.8rem;
 }
 
 .card-price {
@@ -37,4 +43,27 @@
   font-weight: bold;
   color: green;
   text-align: end;
+}
+
+.link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  
+}
+
+.link:hover {
+  background-color: #0056b3;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
 }

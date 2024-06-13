@@ -1,9 +1,13 @@
 <div class="card">
-    <img [src]="imageUrl" alt="Card Image">
-    <div class="card-body">
-      <h5 class="card-title">{{ title }}</h5>
-      <p class="card-description">{{ description }}</p>
+
+  <img [src]="imageUrl" alt="{{ title }}">
+
+  <div class="card-body">
+    <h5 class="card-title">{{ title }}</h5>
+    <p class="card-description">{{ description }}</p>
+    <div class="row">
+      <a class="link" [routerLink]="['/productos', producto.id]">Ver Detalle</a>
       <p class="card-price">{{ price }}</p>
     </div>
   </div>
-  
+</div>

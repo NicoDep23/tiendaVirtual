@@ -1,43 +1,45 @@
 .container {
-  margin-top: 100px;
-  display: flex;
-  flex-wrap: wrap;
-  /* Permite que las tarjetas se ajusten automáticamente */
-  justify-content: space-around;
-  /* Distribuye las tarjetas de manera uniforme */
+  margin: 120px auto;
+  margin-left: 5%;
 }
 
 .row {
   display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-}
-
-.col-2 {
-  flex: 0 0 20%; // 20% of the row width for 5 columns per row
   box-sizing: border-box;
   padding: 10px;
 }
 
-.card-container {
-  width: 100%;
-  margin-top: 20px;
-  position: relative;
+.productos-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.search-bar {
+  width: 100%; 
+  max-width:300px; 
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.label{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .no-productos {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: calc(100vh - 100px); /* Ajusta para que ocupe el espacio restante debajo del navbar */
-        text-align: center;
-        color: #ffffff;
-        font-family: 'Helvetica Neue', Arial, Tahoma, Verdana;
-        font-size: 24px;
-        padding: 20px;
-        box-sizing: border-box;
-    } 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 100px);
+  /* Ajusta para que ocupe el espacio restante debajo del navbar */
+  text-align: center;
+  color: #ffffff;
+  font-family: 'Helvetica Neue', Arial, Tahoma, Verdana;
+  font-size: 24px;
+  padding: 20px;
+  box-sizing: border-box;
+}
 
 .no-productos p {
   font-size: 1.5rem;
@@ -47,4 +49,18 @@
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 200px auto;
+    margin-left: 10%;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    margin: 200px auto;
+    margin-left: 30%;
+  }
 }

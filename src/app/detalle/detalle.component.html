@@ -1,0 +1,15 @@
+<div class="container">
+    <div *ngIf="producto">
+        <div class="row">
+            <div class="col">
+                <img [src]="producto.image" alt="{{ producto.title }}" class="img">
+            </div>
+            <div class="col">
+                <h2>{{ producto.title }}</h2>
+                <p class="descipcion">{{ producto.description }}</p>
+                <p class="precio">Precio: {{ producto.price | currency:'$' }}</p>
+                <a class="link" routerLink="/productos">Volver</a>
+            </div>
+        </div>
+    </div>
+</div>

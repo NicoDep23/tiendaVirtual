@@ -1,13 +1,18 @@
 <div class="container">
+  <label class="label">Buscar Producto: </label>
+  <input class="search-bar" type="text" name="searchBox" [(ngModel)]="searchData" (keyup)="getFileteredProducts()">
+
   <div *ngIf="productos$ | async as productos; else noProductos">
-    <div *ngFor="let row of chunkArray(productos, 5)" class="row">
-      <div *ngFor="let producto of row" class="col-2">
-        <app-card 
-          [title]="producto.title"
+    <div class="productos-grid">
+      <div *ngFor="let producto of productos" class="row">
+        <app-card  class="imagecard"
+          [title]="recortarTitulo(producto.title, 35)" 
           [imageUrl]="producto.image"
-          [description]="producto.description"
-          [price]="'Price $' + producto.price">
+          [price]="(producto.price | currency:'$':'symbol':'1.2-2') ?? ''"
+          [producto]="producto"
+          [list]="filteredData" *ngIf="searchData==''">
         </app-card>
+        
       </div>
     </div>
   </div>

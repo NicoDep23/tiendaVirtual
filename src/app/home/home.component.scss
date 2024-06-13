@@ -1,25 +1,61 @@
 .home-container {
     width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(rgba(233, 234, 234, 0.8), rgba(46, 44, 67, 0.8)), url('/assets/images/bg.jpg');
+    height: calc(100vh - 100px); /* Altura del banner menos la altura del nav-bar */
     background-size: cover;
     background-position: center;
-    background-repeat: repeat-x;
+    background-repeat: no-repeat; /* No repetir el fondo */
     position: relative; 
-    top: 100px; 
-    
+    margin-top: 100px; /* Altura del nav-bar */
 }
 
 .banner {
     position: relative;
-    margin-top: 100px; 
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 .banner video {
     position: absolute;
     width: 100%;
-    height: auto;
+    height: 50%;
+    object-fit: cover; /* Hace que el video cubra el área del banner */
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 }
+
+.carousel {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .slides {
+    display: flex;
+    overflow: hidden;
+  }
+  
+  .slides img {
+    width: 100%;
+    transition: transform 0.5s ease;
+  }
+  
+  button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .prev {
+    left: 0;
+  }
+  
+  .next {
+    right: 0;
+  }
+  
