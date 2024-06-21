@@ -10,9 +10,9 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 })
 export class CardComponent {
   @Input() title: string | undefined;
-  @Input() imageUrl: string | undefined;
+  @Input() images: string | undefined;
   @Input() description: string | undefined;
   @Input() price: string | number | undefined;
   @Input() producto: any;
-  @Input() list: string | number | undefined;
+  
 }

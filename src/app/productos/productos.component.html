@@ -1,30 +1,30 @@
 <div class="container">
-  <label class="label">Buscar Producto: </label>
-  <input class="search-bar" type="text" name="searchBox" [(ngModel)]="searchData" (keyup)="getFileteredProducts()">
+
+  <div class="row">
+    <div class="col-1">
+      <h1>Lista de Productos</h1>
+    </div>
+    <div class="col-2">
+      <input class="search-box" type="text" [(ngModel)]="titulo" (ngModelChange)="buscarProducto()"
+        placeholder="Buscar producto...">
+    </div>
+  </div>
 
   <div *ngIf="productos$ | async as productos; else noProductos">
     <div class="productos-grid">
-      <div *ngFor="let producto of productos" class="row">
-        <app-card  class="imagecard"
-          [title]="recortarTitulo(producto.title, 35)" 
-          [imageUrl]="producto.image"
-          [price]="(producto.price | currency:'$':'symbol':'1.2-2') ?? ''"
-          [producto]="producto"
-          [list]="filteredData" *ngIf="searchData==''">
+      <div *ngFor="let producto of productos" class="row-card">
+        <app-card class="imagecard" [title]="recortarTitulo(producto.title, 35)" [images]="producto.images"
+          [price]="(producto.price | currency:'$':'symbol':'1.2-2') ?? ''" [producto]="producto">
         </app-card>
-        
       </div>
     </div>
   </div>
+
+
   <ng-template #noProductos>
     <div class="no-productos">
       <p>No hay productos disponibles.</p>
     </div>
   </ng-template>
-</div>
-<!--                                                  
-<pre>
-  {{ productos$ | async | json }}
-</pre> -->
 
- 
+</div>

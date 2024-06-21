@@ -19,23 +19,20 @@ export class ProductosComponent {
   private readonly productosSvc = inject(ProductosService);
 
   productos$ = this.productosSvc.getAllProductos();
-  filteredData: any;
-  data: any;
-  searchData:string='';
+
+  titulo: string = '';
   
-  
-
-  getFileteredProducts() {
-    this.filteredData = this.data.filter((productos: ProductosService) => {
-
-      return this.data.title.includes(this.searchData)
-
-    })
+  buscarProducto(): void {
+    if (this.titulo.trim() != '') {
+      this.productos$ = this.productosSvc.filterProductoByName(this.titulo);
+    } else {
+      this.productos$ = this.productosSvc.getAllProductos();
+    }
   }
 
 
   recortarTitulo(titulo: string, maxLength: number): string {
     return titulo.length > maxLength ? titulo.substring(0, maxLength) + '...' : titulo;
   }
-
+  
 }

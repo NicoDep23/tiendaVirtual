@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable, inject } from "@angular/core";
 import { Observable } from "rxjs";
 
@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
 
 export class ProductosService {
 
-  urlBase = 'https://fakestoreapi.com';
+  urlBase = 'https://api.escuelajs.co/api/v1';
 
   private readonly _http = inject(HttpClient);
 
@@ -15,10 +15,12 @@ export class ProductosService {
   }
 
   getProductoById(id: number): Observable<any> {
-    return this._http.get(`https://fakestoreapi.com/products/${id}`);
+    return this._http.get(this.urlBase +`/products/${id}`);
   }
 
-/*   getPrductsByName(name: string){
-    return this._http.get(`${this.urlBase}/productos?linkTo=producto&like=${name}`)
- } */
+  filterProductoByName(name: string): Observable<any> {
+   
+    return this._http.get(this.urlBase +`/products/?title=${name}`);
+  }
+
 }
